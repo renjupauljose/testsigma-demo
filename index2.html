@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Testsigma Demo Website</title>
+    <script src="script2.js"></script>
+    <script src="jquery-3.3.1.js"></script>
+    <link href='style2.css' rel='stylesheet' type='text/css'>
+    <link href='sidebar.css' rel='stylesheet' type='text/css'>
+    <link href='toast.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+    <div id='mySidenav' class='sidenav'>
+        <a href="javascript:void(0)" id='closebutton' class="closebtn">&times;</a>
+        <a class='menu-items' href='javascript:void(0)' onclick="changetabcontent(event, 'Selectors')"><p class='sidebartext'>Selectors</p></a><br>
+        <a class='menu-items' href='javascript:void(0)' onclick="changetabcontent(event, 'Tooltips')"><p class='sidebartext'>Tooltips</p></a><br>
+        <a class='menu-items' href='javascript:void(0)' onclick="changetabcontent(event, 'Frames')"><p class='sidebartext'>Frames</p></a><br>
+        <a class='menu-items' href='javascript:void(0)' onclick="changetabcontent(event, 'Form')"><p class='sidebartext'>Form</p></a><br>
+    </div>
+
+    <div id="main" class="wrapper">
+        <div id='navbar' class='navbar'>
+            <div class="ts-logo">
+                <a href="#">
+                    <img src="C:\Users\renju\git\testsigma-demo\img\logo-icon.png" width="40px">
+                </a>
+            </div>
+        </div>
+
+        <div class='content'>
+            <div id='Selectors' class='tabcontent'><p>selectors</p></div>
+            <div id='Tooltips' class='tabcontent'><p>tooltips</p></div>
+            <div id='Frames' class='tabcontent'><p>frames</p></div>
+            <div id='Form' class='tabcontent'><p>form</p></div>
+        </div>
+
+        <div id="toast"><div id="desc">A notification message..</div></div>
+
+        <div class='footer'>
+            <center>Copyright 2016-2018, Testsigma Inc</center>
+        </div>
+    </div>
+</body>
+
+<script>
+$(document).ready(function(){
+    $("#closebutton").hide();
+    $(".sidebartext").hide();
+    $(".tabcontent").hide();
+});
+
+$("#mySidenav").click(function(){
+    var sidenav = document.getElementById("mySidenav");
+    sidenav.style.width = "15%";
+    sidenav.className = "sidenav open";
+    document.getElementById("main").style.marginLeft = "15%";
+    $("#closebutton").show();
+    $(".sidebartext").show();
+});
+
+$("#closebutton").click(function(event){
+    var sidenav = document.getElementById("mySidenav");
+    launch_toast();
+    sidenav.style.width = "3%";
+    sidenav.className = "sidenav closed";
+    document.getElementById("main").style.marginLeft = "3%";
+    $("#closebutton").hide();
+    $(".sidebartext").hide();
+    event.stopPropagation();
+});
+
+</script>
+
+</html>
