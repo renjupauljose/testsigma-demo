@@ -18,6 +18,8 @@ jobs:
 
     steps:
       - checkout
+      - run: wget -O phpunit https://phar.phpunit.de/phpunit-7.phar
+      - run: chmod +x phpunit
 
       # Download and cache dependencies
       - restore_cache:
