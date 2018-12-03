@@ -31,6 +31,10 @@ jobs:
           command: |
             export Path=$Path:vendor/bin
       - run:
+          name: export Path variable
+          command: |
+            echo $Path
+      - run:
           name: Install project dependencies
           command: php composer.phar install
       - run:
