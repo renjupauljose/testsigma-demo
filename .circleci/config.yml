@@ -27,9 +27,9 @@ jobs:
             php -v
             php composer.phar --version
       - run:
-          name: Display Path variable
+          name: export Path variable
           command: |
-            echo $Path
+            export Path=$Path:vendor/bin
       - run:
           name: Install project dependencies
           command: php composer.phar install
