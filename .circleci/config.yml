@@ -27,6 +27,10 @@ jobs:
             php -v
             php composer.phar --version
       - run:
+          name: Display Path variable
+          command: |
+            echo $Path
+      - run:
           name: Install project dependencies
           command: php composer.phar install
       - run:
